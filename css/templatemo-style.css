@@ -30,7 +30,10 @@ h2 span {
   font-weight: bold;
 }
 /* end h2 */
-
+.btn-contact {
+  width: 100%;
+  text-align: center;
+}
 /* start about team service portfolio contact */
 #about,
 #team,
@@ -218,6 +221,7 @@ h2 span {
 .element {
   height: 60px;
   font-size: 16px;
+  text-align: center;
 }
 /* end home */
 
@@ -273,7 +277,7 @@ h2 span {
 }
 
 #portfolio .portfolio-videos video {
-	max-height: 375px;
+	max-height: 325px;
 }
 
 #portfolio .portfolio-galery {
@@ -294,6 +298,14 @@ h2 span {
   display: inline-block;
 }
 
+#portfolio .portfolio-thumb.portfolio-thumb-left video {
+  margin-left: auto;
+}
+
+#portfolio .portfolio-thumb.portfolio-thumb-right video {
+  margin-right: auto;
+}
+
 #portfolio .portfolio-thumb .img-responsive.paysage {
   aspect-ratio: 6/4;
 }
@@ -306,39 +318,13 @@ h2 span {
 }
 .portfolio-thumb,
 .portfolio-overlay {
-  max-width: 450px;
+  max-width: 100%;
 }
+
 #portfolio .portfolio-thumb {
   overflow: hidden;
-  padding: 0;
-  margin: 0 auto;
-}
-#portfolio .portfolio-thumb .portfolio-overlay {
-  background: var(--text-primary-color);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  position: absolute;
-  padding: 20px 10px 20px 20px;
-  margin-left: auto;
-  margin-right: auto;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-#portfolio .portfolio-thumb .portfolio-overlay h4 {
-  font-weight: bold;
-  padding-bottom: 10px;
-}
-#portfolio .portfolio-thumb .portfolio-overlay .btn {
-  background: none;
-  border: 1px solid #fff;
-  border-radius: 2px;
-  color: #fff;
-  font-weight: bold;
+  padding: 0 2em;
+  margin: 2em auto;
 }
 #portfolio .portfolio-thumb:hover .portfolio-overlay {
   cursor: pointer;
