@@ -171,7 +171,7 @@ h2 span {
 .navbar-default .navbar-nav > li > a.current {
   color: var(--text-primary-color);
 }
-.templatemo-nav {
+.custom-nav {
   border-radius: 0;
   width: 100%;
   z-index: 1000;
@@ -182,7 +182,6 @@ h2 span {
   top: 0;
 }
 /* end navigation */
-
 
 /* start home */
 #home {
@@ -273,15 +272,23 @@ h2 span {
   padding-bottom: 80px;
 }
 
-#portfolio .portfolio-videos > .row > * {
+#portfolio .portfolio-videos video {
+  max-height: 325px;
 }
 
-#portfolio .portfolio-videos video {
-	max-height: 325px;
+#portfolio .portfolio-videos video:not(.in-progress) {
+  cursor: pointer;
+  height: 325px;
+}
+
+#portfolio .portfolio-videos .video-js .vjs-big-play-button {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #portfolio .portfolio-galery {
-	text-align: center;
+  text-align: center;
 }
 
 #portfolio .portfolio-galery .img-responsive:not(.paysage) {
@@ -298,11 +305,11 @@ h2 span {
   display: inline-block;
 }
 
-#portfolio .portfolio-thumb.portfolio-thumb-left video {
+#portfolio .portfolio-thumb.portfolio-thumb-left > * {
   margin-left: auto;
 }
 
-#portfolio .portfolio-thumb.portfolio-thumb-right video {
+#portfolio .portfolio-thumb.portfolio-thumb-right > * {
   margin-right: auto;
 }
 
@@ -326,6 +333,31 @@ h2 span {
   padding: 0 2em;
   margin: 2em auto;
 }
+
+#portfolio .portfolio-thumb .portfolio-thumb-container {
+  width: fit-content;
+  position: relative;
+}
+#portfolio .portfolio-thumb .portfolio-thumb-container:not(.in-progress)::after {
+  content: "▶"; /* Icône Play (Unicode) */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* Cercle semi-transparent */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: none; /* Ne pas bloquer les clics sur la vidéo */
+  z-index: 1;
+}
+
 #portfolio .portfolio-thumb:hover .portfolio-overlay {
   cursor: pointer;
   opacity: 0.8;
@@ -473,7 +505,7 @@ h2 span {
     font-size: 52px;
   }
 
-  .templatemo-nav {
+  .custom-nav {
     position: fixed;
     top: 0;
   }
